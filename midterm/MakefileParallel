@@ -1,0 +1,12 @@
+CC      = gcc
+CFLAGS  = -g -Wall -std=c99
+
+all: parallel
+
+parallel: % : %.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+.PHONY: clean
+clean:
+	rm -f $(OBJS) parallel
+
